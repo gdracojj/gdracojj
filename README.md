@@ -1,125 +1,142 @@
 # Gabriel Draco
 
-### Data Science & Artificial Intelligence Student | Python | Data Analytics | Automation
+### Data Engineer | Python | SQL | PostgreSQL | Data & AI
 
-Sou estudante de **Ciência de Dados e Inteligência Artificial** e venho construindo minha trajetória em tecnologia através de projetos práticos, automação e análise de dados.
+Sou estudante de **Ciência de Dados e Inteligência Artificial** e profissional de tecnologia em formação, direcionando minha carreira para **Engenharia de Dados**.
 
-Tenho interesse principalmente em **Data Analytics, Data Engineering, Machine Learning e Inteligência Artificial**, buscando transformar problemas reais em soluções utilizando tecnologia.
+Desenvolvo projetos práticos envolvendo **ingestão, transformação, processamento e estruturação de dados**, integração de APIs e construção de pipelines para transformar dados brutos em informações preparadas para análise e consumo.
 
-Atualmente estou aprofundando meus conhecimentos em **Python, SQL, bancos de dados, APIs, Git/GitHub e análise de dados**.
+Tenho interesse em **Data Engineering, Data Analytics, Machine Learning e Inteligência Artificial**, buscando aplicar tecnologia na resolução de problemas reais de negócio.
 
 ---
 
 ## 🚀 Sobre mim
 
-- 🎓 Ciência de Dados e Inteligência Artificial — UVA (2026–2028)
-- 🐍 Desenvolvendo projetos com Python
-- 📊 Data Analytics e Data Engineering
-- 🤖 Machine Learning, LLMs e IA Generativa
-- 🔌 Experiência com integração de APIs e automação de processos
-- 🗄️ PostgreSQL, Oracle, Arquitetura e modelagem de dados
-- 🐧 Linux Fedora
-- 🧠 Aprendendo através da construção de projetos reais
+* 🎓 Ciência de Dados e Inteligência Artificial — UVA (2026–2028)
+* 🐍 Desenvolvimento em Python
+* 🗄️ SQL e PostgreSQL
+* 🔄 ETL / ELT e pipelines de dados
+* 🔌 APIs REST e integração de fontes
+* 📊 Data Analytics, Power BI e visualização de dados
+* 🤖 Inteligência Artificial, LLMs e IA Generativa
+* 🐧 Linux / Fedora
+* 🧠 Aprendizado baseado no desenvolvimento de projetos reais
 
 ---
 
 ## 🛠️ Tecnologias
 
-### Linguagens
-- Python
-- SQL
+### Programação
 
-### Dados
-- PostgreSQL
-- Pandas
-- Power BI
-- Tableau
-- MongoDB
-- NoSQL
+* Python
+* SQL
+* Node.js
 
-### Big Data & Engenharia de Dados
-- Apache Spark
-- Hadoop
-- Neo4j
+### Engenharia de Dados
 
-### Desenvolvimento
-- REST APIs
-- Git
-- GitHub
-- Linux
-- VS Code
+* ETL / ELT
+* Data Pipelines
+* Data Processing
+* Data Transformation
+* Data Modeling
 
-### Em aprendizado
-- Machine Learning
-- Inteligência Artificial
-- LLMs
-- IA Generativa
-- Cloud / AWS
-- Data Engineering
+### Bancos de Dados
+
+* PostgreSQL
+* MongoDB
+* NoSQL
+
+### APIs & Integração
+
+* REST APIs
+* FastAPI
+
+### Analytics & BI
+
+* Power BI
+* Tableau
+* Pandas
+
+### Big Data
+
+* Apache Spark
+* Hadoop
+* Neo4j
+
+### Ferramentas & Ambiente
+
+* Git
+* GitHub
+* Linux
+* VS Code
+
+### Em desenvolvimento
+
+* Docker
+* Cloud / AWS
+* Machine Learning
+* LLMs
+* IA Generativa
 
 ---
 
 ## 📌 Projetos
 
-### NEXUS
+### VTAL CCOR V2
 
-Plataforma em desenvolvimento voltada para **inteligência e gestão de licitações públicas**.
+Pipeline de dados desenvolvido para transformar **mensagens não estruturadas provenientes do WhatsApp em dados estruturados e preparados para análise**.
 
-O projeto nasceu de uma necessidade real observada no mercado e utiliza dados públicos do **PNCP (Portal Nacional de Contratações Públicas)**.
+O projeto contempla:
 
-O objetivo é construir uma plataforma capaz de:
+* 📥 Ingestão de dados brutos provenientes do WhatsApp Web
+* ⚙️ Processamento e transformação dos dados
+* 🧹 Padronização e validação
+* 🔗 Enriquecimento através do relacionamento com tabelas dimensionais
+* 📐 Aplicação de regras de negócio
+* 📊 Disponibilização dos dados consolidados para dashboard
+* ⏱️ Redução de aproximadamente **1h30 por ciclo** no trabalho manual de conferência das assunções
 
-- 🔎 Buscar e filtrar licitações
-- 📊 Organizar informações de processos públicos
-- 📍 Filtrar por estado e município
-- 📅 Identificar prazos e datas relevantes
-- 🔌 Consumir dados através de APIs
-- 🗄️ Armazenar e estruturar dados em PostgreSQL
-- 🤖 Evoluir para recursos de inteligência e automação
-- 📋 Gerenciar informações de contratos e atas após a contratação
+**Stack:** Python · FastAPI · Node.js · WhatsApp Web
 
-**Stack:** Python · REST API · PostgreSQL · Git · GitHub
-
-> Projeto privado por envolver desenvolvimento de produto real.
+> Projeto desenvolvido no contexto da PD7 Technology.
 
 ---
 
-## 📚 Formação complementar
+### NEXUS
 
-### FIAP — Nano Course: Big Data & Analytics
+Sistema de filtragem e gestão de **licitações públicas**, desenvolvido a partir de uma necessidade real identificada na RCCS Licitações.
 
-Estudos envolvendo:
+O projeto utiliza a **API do PNCP (Portal Nacional de Contratações Públicas)** como fonte de dados e estrutura o fluxo de ingestão, processamento e armazenamento das informações.
 
-- Big Data & Analytics
-- Data Mining
-- Text Mining
-- Opinion Mining
-- Machine Learning
-- R
-- Tableau
-- Apache Spark
-- MongoDB
-- NoSQL
-- Hadoop
-- Neo4j
-- Governança de dados
+Principais objetivos:
+
+* 🔌 Consumir dados através da API do PNCP
+* 📥 Realizar ingestão e processamento dos dados
+* 🔎 Filtrar oportunidades por palavra-chave, modalidade, região/UF e prazo
+* 🗄️ Estruturar e armazenar dados em PostgreSQL
+* 📊 Preparar dados para consultas e análise
+* 📋 Estruturar uma camada de gestão pós-licitação
+* 📑 Acompanhar informações de atas, vigência, quantitativos e prazos de reajuste
+
+**Stack:** Python · PostgreSQL · DBeaver · API PNCP
+
+> Projeto em desenvolvimento para a RCCS Licitações.
 
 ---
 
 ## 🎯 Objetivo profissional
 
-Estou construindo minha carreira em tecnologia com foco na área de **Dados e Inteligência Artificial**.
+Estou construindo minha carreira em tecnologia com foco em **Engenharia de Dados**, desenvolvendo experiência prática em pipelines, processamento, integração e armazenamento de dados.
 
-Meu objetivo é evoluir profissionalmente passando por:
+Minha trajetória também contempla **Data Analytics e Inteligência Artificial**, áreas que complementam minha formação e ampliam minha capacidade de desenvolver soluções orientadas a dados.
 
-**Data Analyst → Data Engineer → Machine Learning / AI**
-
-Busco desenvolver soluções que unam *dados, automação e inteligência artificial* para resolver problemas reais de negócio.
+Meu objetivo é evoluir tecnicamente na construção de **arquiteturas e pipelines de dados cada vez mais robustos, escaláveis e preparados para aplicações de Analytics e AI**.
 
 ---
 
 ## 📫 Contato
 
-- 📧 E-mail: gabrielmrc70@gmail.com
-- 💼 LinkedIn: (https://www.linkedin.com/in/gabriel-silva-550525337/)
+📧 E-mail: gabrielmrc70@gmail.com
+💼 LinkedIn: https://www.linkedin.com/in/gabriel-silva-550525337/
+
 
