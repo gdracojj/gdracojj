@@ -2,7 +2,7 @@
 
 ### Data Engineer | Python | SQL | PostgreSQL | Data & AI
 
-Sou estudante de **Ciência de Dados e Inteligência Artificial** e profissional de tecnologia em formação, direcionando minha carreira para **Engenharia de Dados**.
+Estudante de **Ciência de Dados e Inteligência Artificial** e profissional de tecnologia em formação, direcionando minha carreira para **Engenharia de Dados**.
 
 Desenvolvo projetos práticos envolvendo **ingestão, transformação, processamento e estruturação de dados**, integração de APIs e construção de pipelines para transformar dados brutos em informações preparadas para análise e consumo.
 
