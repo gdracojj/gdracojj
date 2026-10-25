@@ -1,8 +1,8 @@
 # Gabriel Draco
 
-### Engenharia de Dados | Python | SQL | APIs | Data & AI
+### Data Enginner | Python | SQL | APIs | Data & AI
 
-Sou estudante de **Ciência de Dados e Inteligência Artificial na Universidade Veiga de Almeida (UVA)** e estou direcionando minha carreira para Engenharia de Dados e desenvolvimento de soluções orientadas a dados.
+Estudante de **Ciência de Dados e Inteligência Artificial na Universidade Veiga de Almeida (UVA)** e estou direcionando minha carreira para Engenharia de Dados e desenvolvimento de soluções orientadas a dados.
 
 Desenvolvo projetos práticos envolvendo integração de APIs, processamento e transformação de dados, automação e construção de aplicações com Python. Também utilizo ferramentas de Inteligência Artificial de forma estruturada para apoiar o desenvolvimento, a análise e a revisão de código.
 
