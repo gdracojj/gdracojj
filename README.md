@@ -1,142 +1,103 @@
 # Gabriel Draco
 
-### Data Enginner | Python | SQL | APIs | Data & AI
+### Engenharia de Dados · Python · SQL · PostgreSQL
 
-Estudante de **Ciência de Dados e Inteligência Artificial na Universidade Veiga de Almeida (UVA)** e estou direcionando minha carreira para Engenharia de Dados e desenvolvimento de soluções orientadas a dados.
+Analista de Dados em transição para **Engenharia de Dados**, estudante de Ciência de Dados e Inteligência Artificial na UVA. Construo pipelines que pegam dados de origens desorganizadas (APIs públicas, mensagens de texto livre, planilhas), validam, persistem e entregam para consumo por API e dashboard.
 
-Desenvolvo projetos práticos envolvendo integração de APIs, processamento e transformação de dados, automação e construção de aplicações com Python. Também utilizo ferramentas de Inteligência Artificial de forma estruturada para apoiar o desenvolvimento, a análise e a revisão de código.
-
-Meu foco é transformar problemas reais em soluções funcionais, evoluindo continuamente em engenharia de software, arquitetura de dados e automação.
+Atualmente em busca de oportunidades em Engenharia de Dados, Analytics Engineering e Backend com dados.
 
 ---
 
-## Sobre mim
+## Stack
 
-- 🎓 Ciência de Dados e Inteligência Artificial — UVA (2026–2028)
-- 🐍 Desenvolvimento com Python e FastAPI
-- 🔄 Interesse prático em ETL/ELT, pipelines e transformação de dados
-- 🔌 Integração de sistemas por APIs REST
-- 🗄️ SQL e fundamentos de bancos de dados
-- 📊 Análise de dados e visualização com Excel, Power BI e Tableau
-- 🤖 Desenvolvimento assistido por IA e orquestração de agentes
-- 🐧 Ambiente de desenvolvimento Linux
-- 🧪 Aprendizado orientado à construção, aos testes e à melhoria contínua de projetos
+| Área | Tecnologias |
+|---|---|
+| **Linguagens** | Python, SQL, JavaScript, HTML/CSS |
+| **Engenharia de Dados** | ETL/ELT, ingestão via API, parsing e normalização, validação, idempotência (upsert), checkpoints |
+| **Banco de dados** | PostgreSQL, SQLAlchemy, Alembic, JSON/JSONB |
+| **Backend** | FastAPI, REST, Pydantic, Node.js |
+| **Qualidade e entrega** | Pytest, Git/GitHub, GitHub Actions (CI) |
+| **BI e Analytics** | Power BI, Excel, análise exploratória |
+| **Ambiente** | Linux, VS Code, DBeaver |
 
----
-
-## Tecnologias e ferramentas
-
-**Desenvolvimento**
-- Python
-- FastAPI
-- APIs REST
-- HTML, CSS e JavaScript
-- Node.js
-
-**Dados e integração**
-- SQL
-- ETL / ELT — conceitos e práticas em desenvolvimento
-- Processamento, normalização e validação de dados
-- Integração com APIs externas
-- PostgreSQL — aprofundamento e evolução da persistência no Nexus
-
-**Analytics e BI**
-- Excel
-- Power BI
-- Tableau
-
-**Ferramentas e ambiente**
-- Git e GitHub
-- Linux
-- DBeaver
-- VS Code
-
-**Em desenvolvimento**
-- Docker e conteinerização
-- Tecnologias de nuvem
-- Engenharia de Dados e modelagem de dados
-- Machine Learning, LLMs e aplicações de IA
+**Em estudo:** Docker, Cloud, modelagem de dados (DW/Data Lake), Machine Learning.
 
 ---
 
-## Projetos em destaque
+## Projetos
 
-### [Nexus — Licitações Públicas](https://github.com/gdracojj/nexus)
+### [NEXUS](https://github.com/gdracojj/nexus): ingestão e consulta de licitações públicas
 
-Projeto de uma solução para consulta e filtragem de oportunidades de licitação publicadas no Portal Nacional de Contratações Públicas (PNCP), desenvolvido a partir de uma necessidade real de negócio.
+Projeto independente que coleta dados do Portal Nacional de Contratações Públicas (PNCP) e os disponibiliza para analistas de licitação consultarem com filtros.
 
-**O que o projeto demonstra:**
-- Integração com API externa e consumo de dados do PNCP.
-- Paginação, normalização e processamento de respostas JSON.
-- API backend desenvolvida com Python e FastAPI.
-- Tratamento de falhas HTTP, tentativas e mecanismos de espera para respostas temporárias.
-- Desenvolvimento de uma interface web para consulta das oportunidades.
+**Fluxo:** API do PNCP → cliente com retry → parser e validação → repositório → PostgreSQL → API FastAPI → interface web
 
-**Tecnologias:** Python · FastAPI · PostgreeSQL · REST API · HTML · CSS · JavaScript
+- Ingestão paginada com retry, timeout, backoff exponencial e respeito ao `Retry-After`.
+- Upsert idempotente com chave externa única (`numeroControlePNCP`) e lock consultivo do PostgreSQL contra coletas concorrentes.
+- Hash SHA-256 para detectar alterações e payload original preservado em JSONB para rastreabilidade.
+- Histórico de execuções e retomada a partir de checkpoints por página, gravados na mesma transação da persistência.
+- API REST com filtros (UF, termo, prazo), validação de parâmetros e paginação limitada.
+- Interface web em JavaScript puro, com visões de tabela, linha do tempo e quadro, e indicação de atualidade e completude dos dados.
+- Testes de parser, cliente PNCP, CLI, rotas e integração com PostgreSQL; CI no GitHub Actions com PostgreSQL 16.
 
-**Próximas evoluções:** persistência com PostgreSQL, ingestão estruturada de dados e gestão pós-contratação de Atas de Registro de Preços.
+**Desenvolvimento orientado a especificação:** escrevi e validei as specs (arquitetura, ingestão, segurança, testes), decomponho em tarefas, uso Claude Code para implementar, e reviso o resultado com foco em segurança antes do CI.
 
-O Nexus também é meu principal laboratório de desenvolvimento assistido por IA, no qual exploro a coordenação de ferramentas e agentes para apoiar a implementação, a investigação de problemas e a revisão técnica.
+**Stack:** Python · FastAPI · PostgreSQL · SQLAlchemy · Alembic · Requests · Pytest · GitHub Actions · JavaScript
 
-### [ControlOps — Processamento de Dados Operacionais](https://github.com/gdracojj/ControlOps)
+**Status:** projeto independente, fora de produção. A validação operacional da coleta nacional completa ainda está pendente.
 
-Aplicação que interpreta mensagens de assunção de serviço, compara as informações extraídas com uma escala operacional e organiza os resultados para consulta por API e dashboard.
-
-**O que o projeto demonstra:**
-- Extração e interpretação de informações em texto não estruturado.
-- Normalização e comparação de nomes, postos e horários.
-- Aplicação de regras de negócio e classificação de ocorrências.
-- Processamento e armazenamento local de dados em JSON.
-- Exposição de funcionalidades por API e apresentação dos resultados em dashboard.
-- Testes automatizados para validação do processamento.
-
-**Tecnologias:** Python · FastAPI · Pydantic · Jinja2 · RapidFuzz · JSON · Node.js · PostgreeSQL
-
-O repositório utiliza dados fictícios de demonstração. O projeto representa minha experiência prática com processamento, validação e organização de dados para apoiar fluxos operacionais.
+<!-- Adicionar aqui: print da interface e/ou diagrama do fluxo de ingestão
+![NEXUS](docs/nexus-interface.png)
+-->
 
 ---
 
-## Inteligência Artificial e orquestração de agentes
+### VTAL CCOR V2 / [ControlOps](https://github.com/gdracojj/ControlOps): pipeline de dados operacionais
 
-Utilizo ferramentas e agentes de IA, incluindo **Hermes, Claude e Codex**, para apoiar meu fluxo de desenvolvimento de software.
+Desenvolvido por mim, do início ao fim, na PD7 Technology, e rodou em produção em servidor da empresa. Transforma mensagens de WhatsApp em texto livre em registros estruturados para conferência de assunção de serviço.
 
-Meu foco é explorar a coordenação de ferramentas para dividir problemas, investigar falhas, implementar melhorias e revisar alterações de código com mais organização.
+**Fluxo:** mensagens do WhatsApp Web → parsing e padronização → enriquecimento com tabelas de referência (escalas, colaboradores, postos) → classificação por regras de negócio (regular, atrasada, antecipada, divergente, ausente) → persistência idempotente em PostgreSQL → dashboard operacional
 
-Na prática, esse fluxo pode envolver:
+- Testes automatizados.
+- **Impacto:** redução de aproximadamente 1h30 por ciclo de conferência manual.
+- O ControlOps é a versão de portfólio pública do mesmo projeto, com dados fictícios e sem referências à empresa.
 
-- Decomposição de tarefas técnicas em etapas menores.
-- Uso de diferentes ferramentas para apoiar análise e implementação.
-- Investigação de erros e avaliação de possíveis soluções.
-- Apoio à criação e revisão de testes.
-- Trabalho com Git, branches e revisão de diffs.
-- Validação das alterações antes de incorporá-las aos projetos.
+**Stack:** Python · FastAPI · Node.js · TypeScript · PostgreSQL · RapidFuzz · Pytest
 
-Encaro a IA como uma ferramenta de engenharia: ela pode acelerar o trabalho, mas compreender o código, avaliar as decisões e validar o resultado continuam sendo partes fundamentais do processo.
+<!-- Adicionar aqui: print do dashboard do ControlOps
+![ControlOps](docs/controlops-dashboard.png)
+-->
 
-*Essa orquestração faz parte do meu processo de desenvolvimento; não representa, por si só, uma funcionalidade de agentes integrada ao Nexus ou ao ControlOps.*
+---
+
+## Experiência
+
+**Analista de Dados** · PD7 Technology · até setembro de 2026
+Projetos de dados, BI e automação. Entre eles o VTAL CCOR V2 (acima) e o CCF, dashboard financeiro que consolida a receita das verticais da empresa a partir de Google Sheets, via Google Sheets API, com atualização agendada no Power BI.
+
+**Analista de Dados (PJ)** · RCCS Licitações · jul/2023 a fev/2026
+Análise exploratória e descritiva de dados de compras, estoque, fornecedores, pedidos e licitações, com Excel e Power BI, para inteligência comercial e controle operacional.
 
 ---
 
 ## Formação
 
-**Ciência de Dados e Inteligência Artificial**  
-Universidade Veiga de Almeida (UVA) · 2026–2028
+- **Ciência de Dados e Inteligência Artificial**, Universidade Veiga de Almeida (UVA), 2026–2028
+- **Big Data & Analytics**, FIAP (conteúdo acadêmico: Data Mining, Machine Learning, Spark, MongoDB, Tableau, entre outros)
+- **Excel e Power BI**, Fundação Bradesco
 
-**FIAP — Nano Course: Data Science & Analytics**  
-Estudos relacionados a Big Data & Analytics, mineração de dados e opiniões, governança de Big Data, Machine Learning, visualização de dados e tecnologias de bancos de dados.
+**Idiomas:** Português (nativo) · Inglês (B2) · Espanhol (básico)
 
 ---
 
-## Objetivo profissional
+## Como trabalho com IA
 
-Busco evoluir na área de **Engenharia de Dados e desenvolvimento de soluções**, aprofundando conhecimentos em Python, SQL, Cloud, AI Engineering, integração de sistemas, modelagem, pipelines e arquitetura de dados.
-
-Quero construir sistemas confiáveis que transformem dados brutos em informações úteis, combinando fundamentos de engenharia de software, automação e aplicações práticas de Inteligência Artificial.
+Uso Claude Code e Codex para acelerar o desenvolvimento. Quem define os requisitos, escreve as especificações e revisa o código sou eu, e nada entra sem teste e CI passando.
 
 ---
 
 ## Contato
 
-- **GitHub:** (https://github.com/gdracojj)
-- **LinkedIn:** (https://www.linkedin.com/in/gabriel-silva-550525337/)
+- **GitHub:** [github.com/gdracojj](https://github.com/gdracojj)
+- **LinkedIn:** [gabriel-silva2270](https://www.linkedin.com/in/gabriel-silva2270/)
 - **E-mail:** gabrielmrc70@gmail.com
